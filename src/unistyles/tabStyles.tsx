@@ -1,11 +1,14 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import { createStyleSheet } from "react-native-unistyles";
 import { BOTTOM_TAB_HEIGHT } from "./Constants";
+import { Dimensions } from "react-native";
 
+export const screenHeight = Dimensions.get('screen').height
+export const screenWidth = Dimensions.get('screen').width
 
 export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
     tabContainer: {
-        width: device.width * 0.82,
+        width: screenWidth * 0.82,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -34,7 +37,7 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         left: '55%',
         borderRadius: 20,
         opacity: 0.2,
-        backgroundColor: colors.lightText
+        backgroundColor: '#9197A6'
     },
     tabItem: {
         justifyContent: 'center',
@@ -43,7 +46,7 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
     },
     focusedTabItem: {
         borderBottomWidth: 2,
-        borderBottomColor: colors.primary,
+        borderBottomColor: '#E23744',
     },
     slidingIndicator: {
         position: 'absolute',
@@ -68,7 +71,7 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         resizeMode: 'contain',
     },
     tabLabel: {
-        fontFamily: fonts.Medium,
+        fontFamily: 'Okra-Medium',
         fontSize: RFValue(10),
         color: '#B3B3B3',
     },

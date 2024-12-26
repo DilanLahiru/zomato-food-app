@@ -1,21 +1,19 @@
+import { Dimensions } from "react-native";
 import { createStyleSheet } from "react-native-unistyles";
 
-export const emptyStyles = createStyleSheet(({ colors, device, border }) => ({
-    container: {
+export const screenHeight = Dimensions.get('screen').height
+export const screenWidth = Dimensions.get('screen').width
+
+export const emptyStyles = createStyleSheet(() => ({
+    container:(isLive:boolean = false) => ({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.background
-    },
-    live_container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: '#000'
-    },
+        backgroundColor: isLive ? '#000' : '#fff'
+    }),
     emptyImage: {
-        width: device.width * 0.9,
-        height: device.height * 0.4,
+        width: screenWidth * 0.9,
+        height: screenHeight * 0.4,
         resizeMode:'contain'
     }
 }))
