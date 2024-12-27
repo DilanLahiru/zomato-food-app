@@ -1,16 +1,19 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import { createStyleSheet } from "react-native-unistyles";
 import { isBannerHeight } from "./Constants";
-import { Platform } from "react-native";
+import { Dimensions, Platform } from "react-native";
+
+export const screenHeight = Dimensions.get('screen').height
+export const screenWidth = Dimensions.get('screen').width
 
 export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     container: {
         flex: 1,
-        backgroundColor: colors.background
+        backgroundColor: '#fff'
     },
     topHidingContainer: {
         marginTop: isBannerHeight,
-        backgroundColor: colors.background,
+        backgroundColor: '#fff',
     },
     topHeader: {
         zIndex: 1,
@@ -30,9 +33,9 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         marginVertical: 10,
     },
     lottieContainer: {
-        width: device.width,
+        width: screenWidth,
         backgroundColor: '#CC152D',
-        height: Platform.OS === 'android' ? device.height * 0.54 : device.height * 0.6,
+        height: Platform.OS === 'android' ? screenHeight * 0.54 : screenHeight * 0.6,
         justifyContent: "flex-end",
         position: "absolute",
         zIndex: -3,
@@ -41,7 +44,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     lottie: {
         width: '100%',
         bottom: -1,
-        height: device.width,
+        height: screenWidth,
     },
     rollingText: {
         opacity: 0.6,
@@ -50,11 +53,12 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginTop: Platform.OS === 'android' ? 5 : 0,
     },
     flexRowGap: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4
+        gap: 5,
     },
     flexRow: {
         flexDirection: 'row',
@@ -63,10 +67,10 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     translation: {
         paddingVertical: 2,
         paddingHorizontal: 5,
-        borderRadius: border.md,
+        borderRadius: 10,
         justifyContent: "center",
         alignItems: 'center',
-        backgroundColor: colors.background
+        backgroundColor: '#fff'
     },
     translationIcon: {
         resizeMode: 'contain',
@@ -76,7 +80,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     profileImage: {
         width: '100%',
         height: '100%',
-        borderRadius: border.full,
+        borderRadius: 200,
         resizeMode: 'contain'
     },
     goldenCircle: {
@@ -85,13 +89,13 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         zIndex: 1,
         alignSelf: 'center',
         height: 50,
-        borderRadius: border.full,
+        borderRadius: 200,
     },
     profileAvatar: {
         width: 40,
         marginHorizontal: 5,
         height: 40,
-        borderRadius: border.full,
+        borderRadius: 200,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -114,14 +118,14 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         shadowOpacity: 0.7,
         elevation: 5,
         shadowRadius: 6,
-        shadowColor: colors.background,
+        shadowColor: '#fff',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderRadius: 12,
         width: '88%',
         borderWidth: 0.6,
-        borderColor: colors.tertiary,
+        borderColor: '#F4F4F2',
         paddingHorizontal: 10,
     },
     textContainer: {
@@ -150,9 +154,9 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         flexDirection: 'row',
         padding: 5,
         paddingHorizontal: 10,
-        backgroundColor: isActive ? colors.tertiary : colors.background,
+        backgroundColor: isActive ? '#F4F4F2' : '#fff',
         borderWidth: 1,
-        borderColor: isActive ? colors.active : colors.border,
+        borderColor: isActive ? '#019A51' : '#E5E9EF',
         borderTopLeftRadius: 8,
         borderBottomLeftRadius: 8
     }),
@@ -163,9 +167,9 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         padding: 5,
         paddingHorizontal: 10,
         flexDirection: 'row',
-        backgroundColor: isActive ? colors.tertiary : colors.background,
+        backgroundColor: isActive ? '#F4F4F2' : '#fff',
         borderWidth: 1,
-        borderColor: isActive ? colors.active : colors.border,
+        borderColor: isActive ? '#019A51' : '#E5E9EF',
         borderTopRightRadius: 8,
         borderBottomRightRadius: 8
     }),
