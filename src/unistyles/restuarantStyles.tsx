@@ -1,9 +1,11 @@
 import { createStyleSheet } from "react-native-unistyles";
-import { Colors } from "./Constants";
-import { Platform } from "react-native";
+import { Dimensions, Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
+export const screenHeight = Dimensions.get('screen').height
+export const screenWidth = Dimensions.get('screen').width
+
+export const restaurantStyles = createStyleSheet(() => ({
     listContainer: {
         paddingBottom: 300
     },
@@ -12,25 +14,25 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         shadowOpacity: 0.08,
         elevation: 5,
         shadowRadius: 10,
-        shadowColor: colors.dark,
-        backgroundColor: colors.background,
+        shadowColor: '#18171C',
+        backgroundColor: '#fff',
     },
     card: {
-        backgroundColor: colors.background,
-        borderRadius: border.lg,
+        backgroundColor: '#fff',
+        borderRadius: 12,
         marginBottom: 25,
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.2,
         elevation: 5,
         shadowRadius: 10,
-        shadowColor: colors.dark,
+        shadowColor: '#18171C',
         margin: 10
     },
     image: {
-        borderTopLeftRadius: border.lg,
-        borderTopRightRadius: border.lg,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
         width: '100%',
-        height: device.height * 0.30,
+        height: screenHeight * 0.30,
         resizeMode: 'cover',
     },
     info: {
@@ -53,7 +55,7 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
     backToTopButton: {
         position: 'absolute',
         alignSelf: 'center',
-        top: device.height * 0.055,
+        top: screenHeight * 0.055,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 4,
@@ -66,15 +68,15 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
 }))
 
 export const shadowStyle = {
-    backgroundColor: Colors.background,
+    backgroundColor: '#fff',
     shadowOffset: { width: 1, height: 16 },
     shadowOpacity: 0.4,
     elevation: 5,
     shadowRadius: 6,
-    shadowColor: Colors.border,
+    shadowColor: '#E5E9EF',
 }
 
-export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantHeaderStyles = createStyleSheet(() => ({
     headerContainer: {
         flexDirection: "row",
         alignItems: 'center',
@@ -109,22 +111,22 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
         paddingHorizontal: 10,
     },
     scrollContainer: {
-        backgroundColor: colors.background,
+        backgroundColor: '#fff',
         paddingBottom: 100
     }
 }))
 
 
-export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
+export const searchStyles = createStyleSheet(() => ({
     container: {
-        backgroundColor: colors.background,
+        backgroundColor: '#fff',
         shadowOffset: { width: 1, height: -4 },
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 5,
         bottom: Platform.OS == 'android' ? 22 : 0,
         zIndex: 22,
-        shadowColor: colors.secondary,
+        shadowColor: '#2D2D2D',
     },
     searchInputContainer: {
         backgroundColor: '#F3F4F7',
@@ -132,14 +134,14 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
         shadowOpacity: 1,
         elevation: 5,
         shadowRadius: 14,
-        shadowColor: colors.background,
+        shadowColor: '#fff',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderRadius: 12,
         width: '72%',
         borderWidth: 0.6,
-        borderColor: colors.tertiary,
+        borderColor: '#F4F4F2',
         paddingHorizontal: 10,
     },
     textContainer: {
@@ -166,7 +168,7 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
         gap: 5,
         justifyContent: 'center',
         paddingHorizontal: 10,
-        backgroundColor: colors.secondary,
+        backgroundColor: '#2D2D2D',
         borderRadius: 12,
         height: 48,
     },

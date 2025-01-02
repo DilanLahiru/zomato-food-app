@@ -11,6 +11,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import HeaderSection from '@components/home/HeaderSection';
 import Graphics from '@components/home/Graphics';
+import MainList from '@components/list/MainList';
 
 const DeliveryScreen: FC = () => {
   const inset = useSafeAreaInsets();
@@ -55,6 +56,9 @@ const DeliveryScreen: FC = () => {
           <Animated.View style={[backgroundColorChanges, styles.topHeader]}>
             <HeaderSection />
           </Animated.View>
+        </Animated.View>
+        <Animated.View style={[moveUpStyle]}>
+          <MainList/>
         </Animated.View>
       </View>
     </View>

@@ -47,7 +47,7 @@ const SearchBar = () => {
           <Icon
             iconFamily="Ionicons"
             name="search"
-            color={isVegMode ? '019A51' : '#fff'}
+            color={isVegMode ? '#019A51' : '#E23744'}
             size={18}
           />
           <RollingContent
@@ -69,7 +69,7 @@ const SearchBar = () => {
           <Icon
             iconFamily="Ionicons"
             name="mic-outline"
-            color={isVegMode ? '019A51' : '#fff'}
+            color={isVegMode ? '#019A51' : '#E23744'}
             size={18}
           />
         </TouchableOpacity>

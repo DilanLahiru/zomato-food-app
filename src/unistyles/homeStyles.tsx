@@ -12,7 +12,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         backgroundColor: '#fff'
     },
     topHidingContainer: {
-        marginTop: isBannerHeight,
+        marginTop: screenHeight * 0.4,
         backgroundColor: '#fff',
     },
     topHeader: {

@@ -1,6 +1,10 @@
+import { Dimensions } from "react-native";
 import { createStyleSheet } from "react-native-unistyles";
 
-export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
+export const screenHeight = Dimensions.get('screen').height
+export const screenWidth = Dimensions.get('screen').width
+
+export const cardStyles = createStyleSheet(() => ({
     recommendedContainer: {
         marginTop: 25,
         paddingLeft:10
@@ -16,13 +20,13 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     },
     itemContainer: {
         marginRight: 15,
-        width: device.width * 0.3,
+        width: screenWidth * 0.3,
         overflow: 'hidden',
         marginBottom: 15,
     },
     regularFoodImage: {
-        width: device.width * 0.28,
-        height: device.width * 0.28,
+        width: screenWidth * 0.28,
+        height: screenWidth * 0.28,
         resizeMode: 'cover'
     },
     bookmarkIcon: {
@@ -62,7 +66,7 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
         borderRadius: 12,
         overflow: 'hidden',
         borderWidth: 1,
-        borderColor: colors.border
+        borderColor: '#E5E9EF'
     },
     centerText: {
         textAlign: 'center',
